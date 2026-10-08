@@ -2093,7 +2093,7 @@ function vSettings() {
     <div class="set-row"><span class="set-state ${GH.token ? "ok" : ""}"><i></i>${GH.token ? "Demandes activées" : "Demandes non activées"}</span></div>
     <form class="set-form" data-form="gh" autocomplete="off">
       <label class="field"><span class="label">Jeton GitHub (accès aux demandes uniquement)</span><input class="input" id="ghin" name="gh" type="password" placeholder="github_pat_…" autocomplete="off" spellcheck="false"></label>
-      <div class="set-btns"><button class="btn primary" type="submit">Enregistrer</button><button class="btn" type="button" data-act="testgh" ${GH.token ? "" : "disabled"}>Tester</button>${GH.token ? `<button class="btn ghost danger" type="button" data-act="rmgh">Retirer</button>` : ""}</div>
+      <div class="set-btns"><button class="btn primary" type="submit">Enregistrer</button><button class="btn" type="button" data-act="testgh" ${GH.token ? "" : "disabled"}>Tester</button>${GH.token ? `<button class="btn" type="button" data-act="copygh">Copier le jeton</button>` : ""}${GH.token ? `<button class="btn ghost danger" type="button" data-act="rmgh">Retirer</button>` : ""}</div>
     </form>
     <details class="howto"><summary>Créer le jeton, pas à pas (gratuit)</summary><ol>
       <li>Ouvre <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com › Fine-grained token</a>, connecté à ton compte.</li>
@@ -2135,7 +2135,7 @@ function vSettings() {
   </section>
   <p class="note-ed">FilRouge · version ${APP_VERSION}</p>`;
 }
-const APP_VERSION = "1.2.0";
+const APP_VERSION = "1.2.1";
 function exportData() {
   const data = { app:"filrouge", version:1, exported:new Date().toISOString(), entries:S.entries, works:S.works, covers:S.covers, reviews:S.reviews.me || {} };
   const blob = new Blob([JSON.stringify(data)], { type:"application/json" });
@@ -2189,6 +2189,11 @@ async function loadMeta(manual) {
 document.addEventListener("click", ev => {
   const t = ev.target.closest("[data-act]"); if (!t) return;
   const act = t.dataset.act;
+  if (act === "copygh") {
+    const show = () => { const inp = $("#ghin"); if (inp) { inp.type = "text"; inp.value = GH.token; inp.focus(); inp.select(); } toast("Copie automatique refusée : le jeton est affiché dans le champ, sélectionne-le et copie-le."); };
+    try { navigator.clipboard.writeText(GH.token).then(() => toast("Jeton copié : colle-le dans FilRouge sur ton autre appareil."), show); } catch { show(); }
+    return;
+  }
   if (act === "rmgh") { setToken(""); toast("Jeton retiré de ce téléphone."); render(); }
   else if (act === "export") exportData();
   else if (act === "importfile") $("#importfile").click();
