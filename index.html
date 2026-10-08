@@ -1341,7 +1341,7 @@ const kindIs = (w, k) => !k || k === "all" || (k === "anime" ? w.t === "anime" :
 const TYPE_SEG = [["all","Tout"],["manga","Manga"],["serie","Séries"],["film","Films"]];
 const typeLabel = w => w.t === "manga" ? "Manga" : (isFilm(w) ? "Film" : w.fmt === "ONA" ? "ONA" : w.fmt === "OAV" ? "OAV" : "Série");
 /* œuvres liées : rel = ["id", {id, r:"Suite"}…], complétées par les liens inverses */
-const REL_INV = { "Suite":"Préquelle", "Préquelle":"Suite", "Adaptation animée":"Manga d’origine", "Manga d’origine":"Adaptation animée", "Film":"Série d’origine", "Série d’origine":"Film", "Film d’animation":"Manga d’origine", "Spin-off":"Œuvre principale", "Œuvre principale":"Spin-off", "Remake":"Version d’origine", "Version d’origine":"Remake", "Même univers":"Même univers", "Préquelle (film)":"Suite (série)", "Suite (série)":"Préquelle (film)", "Film préquelle":"Suite en série", "Suite en série":"Film préquelle", "Épisode spécial (préquelle)":"Série", "Film (suite)":"Série d’origine", "Film (suite et fin)":"Série d’origine", "Film précédent":"Film suivant", "Nouvelle série":"Série précédente", "Série précédente":"Nouvelle série", "Préquel":"Suite" };
+const REL_INV = { "Suite":"Préquelle", "Préquelle":"Suite", "Adaptation animée":"Manga d’origine", "Manga d’origine":"Adaptation animée", "Film":"Série d’origine", "Série d’origine":"Film", "Film d’animation":"Manga d’origine", "Spin-off":"Œuvre principale", "Œuvre principale":"Spin-off", "Remake":"Version d’origine", "Version d’origine":"Remake", "Même univers":"Même univers", "Même auteur":"Même auteur", "Version d’origine":"Remake", "Version d'origine":"Remake", "Préquelle (film)":"Suite (série)", "Suite (série)":"Préquelle (film)", "Film préquelle":"Suite en série", "Suite en série":"Film préquelle", "Épisode spécial (préquelle)":"Série", "Film (suite)":"Série d’origine", "Film (suite et fin)":"Série d’origine", "Film précédent":"Film suivant", "Nouvelle série":"Série précédente", "Série précédente":"Nouvelle série", "Préquel":"Suite" };
 function autoRel(w, o) {
   if (w.t === "manga" && o.t === "anime") return isFilm(o) ? "Film d’animation" : "Adaptation animée";
   if (w.t === "anime" && o.t === "manga") return "Manga d’origine";
@@ -2303,7 +2303,7 @@ function vSettings() {
   </section>
   <p class="note-ed">FilRouge · version ${APP_VERSION}</p>`;
 }
-const APP_VERSION = "1.3.2";
+const APP_VERSION = "1.3.3";
 function exportData() {
   const data = { app:"filrouge", version:1, exported:new Date().toISOString(), entries:S.entries, works:S.works, covers:S.covers, reviews:S.reviews.me || {} };
   const blob = new Blob([JSON.stringify(data)], { type:"application/json" });

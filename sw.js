@@ -1,5 +1,5 @@
 /* FilRouge — service worker : l'app fonctionne hors ligne, les données se mettent à jour en ligne. */
-const VERSION = "filrouge-1.3.2";
+const VERSION = "filrouge-1.3.3";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icons/icon.svg", "./icons/icon-192.png", "./icons/icon-512.png", "./icons/icon-maskable-512.png", "./icons/icon-180.png"];
 
 self.addEventListener("install", e => {
