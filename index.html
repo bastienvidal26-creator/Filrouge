@@ -1227,7 +1227,9 @@ function settleRequests(data) {
     const same = S.requests.filter(x => x.n === r.n).length;
     const hit = id => works[id].req === r.n && (works[id].reqq ? norm(works[id].reqq) === norm(r.q) : same === 1);
     const ids = Object.keys(works).filter(hit);
+    const ex = (data.exists || []).find(x => x && x.n === r.n && (x.q ? norm(x.q) === norm(r.q) : same === 1) && getWork(x.id));
     if (ids.length) { r.status = "done"; r.ids = ids; fresh.push(works[ids[0]].ti); }
+    else if (ex) { r.status = "done"; r.ids = [ex.id]; fresh.push(getWork(ex.id).ti); }
     else if (nf.some(x => x.n === r.n && (x.q ? norm(x.q) === norm(r.q) : same === 1))) r.status = "notfound";
   });
   if (fresh.length) { saveRequests(); toast(fresh.length === 1 ? `Nouvelle fiche prête : ${fresh[0]}` : `${fresh.length} nouvelles fiches prêtes.`); }
@@ -2301,7 +2303,7 @@ function vSettings() {
   </section>
   <p class="note-ed">FilRouge · version ${APP_VERSION}</p>`;
 }
-const APP_VERSION = "1.3.0";
+const APP_VERSION = "1.3.1";
 function exportData() {
   const data = { app:"filrouge", version:1, exported:new Date().toISOString(), entries:S.entries, works:S.works, covers:S.covers, reviews:S.reviews.me || {} };
   const blob = new Blob([JSON.stringify(data)], { type:"application/json" });
