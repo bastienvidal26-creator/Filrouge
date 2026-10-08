@@ -392,6 +392,7 @@ textarea.input{height:auto;min-height:96px;padding:10px 12px;resize:vertical;wid
 .srcs{list-style:none;padding:0;margin:0;display:grid;gap:6px;max-width:68ch;font-size:13.5px}
 .srcs a{color:#d1d1d6}
 .top-gear{display:none}
+.top-gear svg{width:21px;height:21px}
 .reqs{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .req{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface)}
 .req i{width:8px;height:8px;border-radius:50%;background:#636366;flex:none}
@@ -474,7 +475,7 @@ body.dropping .hero-cover .cover,body.dropping .cover-pick .cover{outline:3px da
           <input id="q" type="search" placeholder="Titre, personnage, auteur, studio…" autocomplete="off">
         </label>
         <button class="btn primary top-add" data-act="add" type="button" aria-label="Ajouter une œuvre"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span class="t">Ajouter</span></button>
-        <button class="iconbtn top-gear" type="button" data-nav="settings" aria-label="Réglages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
+        <button class="iconbtn top-gear" type="button" data-nav="settings" aria-label="Réglages"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></button>
       </div>
     </header>
     <main id="view"></main>
@@ -495,7 +496,6 @@ body.dropping .hero-cover .cover,body.dropping .cover-pick .cover{outline:3px da
   <g clip-path="url(#lh-page)" mask="url(#lh-mask)" opacity=".22"><rect x="104" y="122" width="304" height="290" fill="url(#lh-dots)"/></g>
   <g fill="none" stroke="#a1a1a6" stroke-width="8"><rect x="150" y="92" width="22" height="54" rx="11"/><rect x="214" y="92" width="22" height="54" rx="11"/><rect x="278" y="92" width="22" height="54" rx="11"/><rect x="342" y="92" width="22" height="54" rx="11"/></g>
   <g fill="#0b0b0c"><circle cx="161" cy="138" r="7"/><circle cx="225" cy="138" r="7"/><circle cx="289" cy="138" r="7"/><circle cx="353" cy="138" r="7"/></g>
-  <path d="M118 152 C168 116 212 170 258 142 S338 118 370 166 C394 204 378 298 390 356 C398 396 380 428 400 462" fill="none" stroke="#e8361c" stroke-width="9" stroke-linecap="round"/>
   <g fill="none" stroke="#0b0b0c" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><rect x="148" y="196" width="34" height="34" rx="9"/><path d="M156 213 l8 8 l14 -17"/><path d="M206 213 H362"/><rect x="148" y="258" width="34" height="34" rx="9"/><path d="M156 275 l8 8 l14 -17"/><path d="M206 275 H326"/><rect x="148" y="320" width="34" height="34" rx="9"/><path d="M206 337 H290"/></g>
 </symbol>
   <linearGradient id="hg-badge" x1="0" y1="1" x2="0" y2="0"><stop offset="0" style="stop-color:var(--fire-4)"/><stop offset=".55" style="stop-color:var(--fire-3)"/><stop offset="1" style="stop-color:var(--fire-2)"/></linearGradient>
@@ -965,7 +965,7 @@ const ICON = {
   img:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9.5" cy="9.5" r="1.8"/><path d="m20 15-4.5-4.5L6 20"/></svg>',
   ext:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>',
   spark:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg>',
-  gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>',
+  gear:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>',
   shuffle:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h3c5 0 5 10 10 10h3M4 17h3c1.6 0 2.7-1 3.6-2.4M13.4 9.4C14.3 8 15.4 7 17 7h3M18 4l3 3-3 3M18 14l3 3-3 3"/></svg>'
 };
 
@@ -1030,17 +1030,23 @@ function writeError(e) {
   if (e && e.code === "quota_exceeded") toast("Stockage du téléphone plein : supprime quelques illustrations importées.");
   else toast("Enregistrement impossible pour le moment.");
 }
+S.del = { e:{}, w:{}, c:{}, r:{} };
 function put(kind, id, data) {
   const key = kind === "e" ? "entries" : kind === "w" ? "works" : "covers";
   const map = S[key];
-  if (data === null) delete map[id]; else map[id] = data;
-  save(key);
+  if (data === null) { delete map[id]; S.del[kind][id] = Date.now(); }
+  else {
+    if (kind === "w") data.updated = Date.now();
+    if (kind === "c") data.at = Date.now();
+    map[id] = data; delete S.del[kind][id];
+  }
+  save(key); save("del"); syncSoon(kind === "c" ? "cov" : "lib");
 }
 function putReview(workId, rv) {
   const mine = { ...(S.reviews.me || {}) };
-  if (rv) mine[workId] = rv; else delete mine[workId];
+  if (rv) { mine[workId] = rv; delete S.del.r[workId]; } else { delete mine[workId]; S.del.r[workId] = Date.now(); }
   S.reviews.me = mine;
-  save("reviews");
+  save("reviews"); save("del"); syncSoon("lib");
 }
 
 /* ───────── Claude sans API : demandes traitées par une tâche programmée (incluse dans l'abonnement) ───────── */
@@ -1096,6 +1102,87 @@ function settleRequests(data) {
   if (fresh.length) { saveRequests(); toast(fresh.length === 1 ? `Nouvelle fiche prête : ${fresh[0]}` : `${fresh.length} nouvelles fiches prêtes.`); }
   else if (S.requests.some(r => r.status === "notfound" && !r.seen)) { S.requests.forEach(r => { if (r.status === "notfound") r.seen = true; }); saveRequests(); }
 }
+/* ── synchronisation PC ↔ téléphone (dépôt privé filrouge-perso) ── */
+const SYNC = { repo:"filrouge-perso", busy:false, last: lsGet("filrouge:lastsync") || 0, err:"", dirty:{ lib:false, cov:false } };
+let syncT;
+function syncSoon(which) { if (which) SYNC.dirty[which] = true; clearTimeout(syncT); syncT = setTimeout(() => syncNow(), 5000); }
+async function ghRepo(repo, path, opts = {}, accept) {
+  const res = await fetch(`https://api.github.com/repos/${GH.owner}/${repo}${path}`, {
+    ...opts, cache:"no-store",
+    headers:{ "Accept": accept || "application/vnd.github+json", "Authorization":`Bearer ${GH.token}`, "X-GitHub-Api-Version":"2022-11-28", ...(opts.body ? { "Content-Type":"application/json" } : {}) }
+  });
+  if (!res.ok) { const err = new Error("gh"); err.status = res.status; throw err; }
+  return accept && accept.includes("raw") ? res.text() : res.json();
+}
+function b64encode(str) {
+  const bytes = new TextEncoder().encode(str); let bin = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) bin += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+  return btoa(bin);
+}
+async function getRemote(path) {
+  let meta;
+  try { meta = await ghRepo(SYNC.repo, `/contents/${path}`); }
+  catch (e) { if (e.status === 404) return { data:null, sha:null }; throw e; }
+  const raw = await ghRepo(SYNC.repo, `/contents/${path}`, {}, "application/vnd.github.raw+json");
+  let data = null; try { data = JSON.parse(raw); } catch {}
+  return { data, sha:meta.sha };
+}
+async function putRemote(path, obj, sha) {
+  const body = { message:`FilRouge : synchronisation du ${new Date().toLocaleString("fr-FR")}`, content:b64encode(JSON.stringify(obj)) };
+  if (sha) body.sha = sha;
+  return ghRepo(SYNC.repo, `/contents/${path}`, { method:"PUT", body:JSON.stringify(body) });
+}
+const stamp = (k, v) => !v ? 0 : k === "e" ? (v.updated || v.added || 0) : k === "w" ? (v.updated || v.created || 0) : k === "c" ? (v.at || 0) : k === "r" ? (Date.parse(v.d || 0) || 0) : 0;
+function mergeMap(k, local, remote, ldel, rdel, flags) {
+  const out = {}, del = {};
+  const keys = new Set([...Object.keys(local), ...Object.keys(remote), ...Object.keys(ldel), ...Object.keys(rdel)]);
+  for (const id of keys) {
+    const l = local[id], r = remote[id], d = Math.max(ldel[id] || 0, rdel[id] || 0);
+    const best = stamp(k, l) >= stamp(k, r) ? (l || r) : r;
+    if (best && stamp(k, best) >= d) out[id] = best; else if (d) del[id] = d;
+    if (out[id] !== l || (del[id] || 0) !== (ldel[id] || 0)) flags.local = true;
+    if (out[id] !== r || (del[id] || 0) !== (rdel[id] || 0)) flags.remote = true;
+  }
+  return { out, del };
+}
+async function syncNow(manual, retry) {
+  if (!GH.token || !navigator.onLine || SYNC.busy) { if (manual && !GH.token) toast("Ajoute d’abord ton jeton GitHub."); return; }
+  SYNC.busy = true; SYNC.err = ""; paintSync();
+  try {
+    const [lib, cov] = await Promise.all([getRemote("bibliotheque.json"), getRemote("illustrations.json")]);
+    const L = lib.data || {}, C = cov.data || {}, Ld = L.del || {}, fl = { local:false, remote:!lib.sha }, fc = { local:false, remote:!cov.sha && Object.keys(S.covers).length > 0 };
+    const e = mergeMap("e", S.entries, L.entries || {}, S.del.e, Ld.e || {}, fl);
+    const w = mergeMap("w", S.works, L.works || {}, S.del.w, Ld.w || {}, fl);
+    const r = mergeMap("r", S.reviews.me || {}, L.reviews || {}, S.del.r, Ld.r || {}, fl);
+    const c = mergeMap("c", S.covers, C.covers || {}, S.del.c, (C.del || {}).c || {}, fc);
+    if (fl.local || fc.local) {
+      S.entries = e.out; S.works = w.out; S.reviews.me = r.out; S.covers = c.out;
+      S.del = { e:e.del, w:w.del, r:r.del, c:c.del };
+      ["entries","works","covers","reviews","del"].forEach(save);
+      softRender();
+    }
+    if (fl.remote || SYNC.dirty.lib) { await putRemote("bibliotheque.json", { v:1, updated:Date.now(), entries:e.out, works:w.out, reviews:r.out, del:{ e:e.del, w:w.del, r:r.del } }, lib.sha); }
+    if (fc.remote || SYNC.dirty.cov) { await putRemote("illustrations.json", { v:1, updated:Date.now(), covers:c.out, del:{ c:c.del } }, cov.sha); }
+    SYNC.dirty = { lib:false, cov:false };
+    SYNC.last = Date.now(); lsSet("filrouge:lastsync", SYNC.last);
+    if (manual) toast("Synchronisé avec tes autres appareils.");
+  } catch (err) {
+    SYNC.busy = false;
+    if ((err.status === 409 || err.status === 422) && !retry) return syncNow(manual, true);
+    SYNC.err = err.status === 404 ? "Dépôt privé filrouge-perso introuvable : crée-le puis donne-lui accès dans ton jeton." : err.status === 403 || err.status === 401 ? "Le jeton n’a pas la permission Contents (lecture et écriture) sur filrouge-perso." : "Synchronisation impossible pour le moment.";
+    if (manual) toast(SYNC.err);
+  }
+  SYNC.busy = false; paintSync();
+}
+function syncLabel() {
+  if (!GH.token) return "Jeton GitHub manquant";
+  if (SYNC.busy) return "Synchronisation…";
+  if (SYNC.err) return SYNC.err;
+  return SYNC.last ? `Synchronisé ${rel(SYNC.last)}` : "Pas encore synchronisé";
+}
+function paintSync() { const el = document.getElementById("syncstate"); if (el) { el.textContent = syncLabel(); el.parentElement.classList.toggle("ok", !!SYNC.last && !SYNC.err); } }
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible" && Date.now() - SYNC.last > 60000) syncNow(); });
+
 function requestsHTML(limit) {
   const rs = S.requests.slice(0, limit || 60);
   if (!rs.length) return "";
@@ -1239,7 +1326,7 @@ const fmtScore = n => n == null ? "—" : (Math.round(n * 10) / 10).toString().r
 const prefs = Object.assign({ layout:"grid", catSort:"title", catDir:1, listSort:"updated" }, lsGet(PREFK) || {});
 const savePrefs = () => lsSet(PREFK, prefs);
 const state = {
-  view:"home", id:null, stack:[], editId:null,
+  view:"home", id:null, from:null, depth:0, editId:null,
   cat:{ q:"", type:"all", demo:"", genre:"", pst:"", mine:"", person:"" },
   list:{ tab:"current", type:"all" },
   seed: Math.random()
@@ -1266,7 +1353,7 @@ const NAV = [
 ];
 function renderNav() {
   const n = Object.keys(S.entries).length;
-  const cur = state.view === "work" || state.view === "add" ? (state.stack[state.stack.length - 1] || {}).view : state.view;
+  const cur = state.view === "work" || state.view === "add" ? (state.from || "catalog") : state.view;
   $("#railnav").innerHTML = NAV.map(x => `<button class="nav" type="button" data-nav="${x.v}" ${cur === x.v ? 'aria-current="page"' : ""}>${ICON[x.i]}<span>${x.l}</span>${x.v === "list" && n ? `<span class="count">${n}</span>` : x.v === "catalog" ? `<span class="count">${allWorks().length}</span>` : ""}</button>`).join("");
   $("#tabbar").innerHTML = NAV.filter(x => !x.rail).map(x => `<button type="button" data-nav="${x.v}" ${cur === x.v ? 'aria-current="page"' : ""}>${ICON[x.i]}<span>${x.l}</span></button>`).join("") +
     `<button type="button" data-act="add" ${state.view === "add" ? 'aria-current="page"' : ""}>${ICON.plus}<span>Ajouter</span></button>`;
@@ -1275,20 +1362,30 @@ function renderNav() {
   sy.classList.toggle("on", navigator.onLine);
   sy.querySelector("span").textContent = navigator.onLine ? (upd ? `En ligne · données du ${upd}` : "En ligne") : "Hors ligne · tout reste disponible";
 }
+function navState() { return { fr:1, view:state.view, id:state.id, from:state.from, depth:state.depth }; }
 function go(view, id, push = true) {
-  if (push && state.view !== "add") state.stack.push({ view:state.view, id:state.id, y:scrollY });
-  if (state.stack.length > 30) state.stack.shift();
-  state.view = view; state.id = id || null;
+  const deep = v => v === "work" || v === "add";
+  const from = deep(view) ? (deep(state.view) ? state.from : state.view) : null;
+  try { history.replaceState({ ...navState(), y:scrollY }, ""); } catch {}
+  state.view = view; state.id = id || null; state.from = from;
+  if (push) state.depth += 1;
+  try { (push ? history.pushState : history.replaceState).call(history, navState(), ""); } catch {}
   render();
   scrollTo(0, 0);
 }
 function back() {
-  const prev = state.stack.pop();
-  if (!prev) return go("home", null, false);
-  state.view = prev.view; state.id = prev.id;
-  render();
-  requestAnimationFrame(() => scrollTo(0, prev.y || 0));
+  if (state.depth > 0) history.back();
+  else go("home", null, false);
 }
+addEventListener("popstate", ev => {
+  const st = ev.state;
+  if (!st || !st.fr) { state.view = "home"; state.id = null; state.from = null; state.depth = 0; try { history.replaceState(navState(), ""); } catch {} render(); return; }
+  if (state.view === "add" && st.view !== "add") draft = null;
+  state.view = st.view; state.id = st.id || null; state.from = st.from || null; state.depth = st.depth || 0;
+  if (state.view === "work" && !getWork(state.id)) { state.view = "catalog"; state.id = null; }
+  render();
+  requestAnimationFrame(() => scrollTo(0, st.y || 0));
+});
 
 /* ───────── render scheduling (don't clobber typing) ───────── */
 let pendingRender = false;
@@ -1816,8 +1913,8 @@ function saveDraft() {
   const wasNew = !draft.id;
   draft = null;
   toast(!wasNew ? "Fiche mise à jour." : w.ai ? `Fiche « ${w.ti} » créée par Claude et ajoutée à l’encyclopédie.` : `Fiche « ${w.ti} » créée.`);
-  if (state.stack.length && state.stack[state.stack.length - 1].view === "work" && !wasNew) { state.stack.pop(); }
-  go("work", id);
+  if (wasNew) go("work", id, false);
+  else back();
 }
 function fichePrompt(title, jp, type) {
   return `Tu es documentaliste spécialisé en manga et animation japonaise. Œuvre demandée : « ${title}${jp ? " / " + jp : ""} », type : ${type === "manga" ? "manga" : "anime (série ou film)"}.
@@ -1907,7 +2004,7 @@ document.addEventListener("drop", e => {
 document.addEventListener("click", ev => {
   const t = ev.target.closest("button, [data-open], tr[data-open]"); if (!t) return;
   const d = t.dataset;
-  if (d.nav) { if (d.tab) state.list.tab = d.tab; if (d.nav === "catalog") state.cat.person = ""; state.stack = []; go(d.nav, null, false); return; }
+  if (d.nav) { if (d.tab) state.list.tab = d.tab; if (d.nav === "catalog") state.cat.person = ""; if (d.nav === state.view) { scrollTo({ top:0, behavior:"smooth" }); render(); return; } go(d.nav, null, true); return; }
   if (d.open) { go("work", d.open); return; }
   if (d.person) { state.cat = { q:"", type:"all", demo:"", genre:"", pst:"", mine:"", person:d.person }; $("#q").value = ""; go("catalog"); return; }
   if (d.genre) { state.cat = { ...state.cat, genre:d.genre, person:"", q:"" }; $("#q").value = ""; go("catalog"); return; }
@@ -1928,7 +2025,7 @@ document.addEventListener("click", ev => {
     case "delwork": {
       if (t.dataset.armed !== "1") { t.dataset.armed = "1"; t.textContent = "Confirmer la suppression définitive"; return; }
       const id = state.id, w = getWork(id); put("w", id, null); if (S.covers[id]) put("c", id, null); if (S.entries[id]) put("e", id, null);
-      toast(`Fiche « ${w.ti} » supprimée.`); state.stack = []; go("catalog", null, false); break; }
+      toast(`Fiche « ${w.ti} » supprimée.`); go("catalog", null, false); break; }
     case "shuffle": state.seed = Math.random(); render(); break;
     case "clearperson": state.cat.person = ""; render(); break;
     case "resetcat": state.cat = { q:"", type:"all", demo:"", genre:"", pst:"", mine:"", person:state.cat.person }; $("#q").value = ""; render(); break;
@@ -2008,6 +2105,19 @@ function vSettings() {
     ${S.requests.length ? `<div class="label">Mes demandes</div>${requestsHTML()}` : ""}
   </section>
   <section class="set">
+    <h2>Synchronisation PC et téléphone</h2>
+    <p class="muted">Ta liste, tes notes, tes fiches perso et tes illustrations sont copiées dans ton dépôt GitHub <b>privé</b> filrouge-perso. Chaque appareil où FilRouge a ton jeton les récupère automatiquement.</p>
+    <div class="set-row"><span class="set-state ${SYNC.last && !SYNC.err ? "ok" : ""}"><i></i><span id="syncstate">${esc(syncLabel())}</span></span></div>
+    <div class="set-btns"><button class="btn" type="button" data-act="syncnow" ${GH.token ? "" : "disabled"}>Synchroniser maintenant</button></div>
+    <details class="howto"><summary>Activer la synchronisation (une seule fois)</summary><ol>
+      <li>Sur <a href="https://github.com/new" target="_blank" rel="noopener">github.com/new</a>, crée le dépôt <b>filrouge-perso</b> en <b>Private</b>, avec « Add a README file ».</li>
+      <li>Ouvre <a href="https://github.com/settings/personal-access-tokens" target="_blank" rel="noopener">tes jetons GitHub</a>, puis le jeton « FilRouge » et touche <b>Edit</b>.</li>
+      <li>Dans <b>Repository access</b>, ajoute <b>filrouge-perso</b> à côté de Filrouge.</li>
+      <li>Dans <b>Repository permissions</b>, mets <b>Contents</b> sur « Read and write » (garde Issues en « Read and write »), puis <b>Update</b>.</li>
+      <li>Reviens ici et touche <b>Synchroniser maintenant</b>. Sur l’ordinateur, ouvre FilRouge à la même adresse et colle le même jeton dans les Réglages.</li>
+    </ol></details>
+  </section>
+  <section class="set">
     <h2>Presse, tendances et plateformes</h2>
     <p class="muted">Mis à jour chaque semaine et téléchargés automatiquement quand tu es en ligne. Dernière mise à jour : <b>${esc(upd)}</b>.</p>
     <div class="set-btns"><button class="btn" type="button" data-act="refreshmeta">Actualiser maintenant</button></div>
@@ -2025,7 +2135,7 @@ function vSettings() {
   </section>
   <p class="note-ed">FilRouge · version ${APP_VERSION}</p>`;
 }
-const APP_VERSION = "1.1.0";
+const APP_VERSION = "1.2.0";
 function exportData() {
   const data = { app:"filrouge", version:1, exported:new Date().toISOString(), entries:S.entries, works:S.works, covers:S.covers, reviews:S.reviews.me || {} };
   const blob = new Blob([JSON.stringify(data)], { type:"application/json" });
@@ -2046,6 +2156,7 @@ function importData(text) {
   Object.assign(S.covers, d.covers || {});
   S.reviews.me = Object.assign({}, S.reviews.me || {}, d.reviews || d.myReviews || {});
   ["entries","works","covers","reviews"].forEach(save);
+  syncSoon("lib"); syncSoon("cov");
   toast(`Import terminé : ${ne} œuvre${ne > 1 ? "s" : ""} dans ta liste.`);
   go("list", null, false);
 }
@@ -2066,8 +2177,9 @@ async function loadMeta(manual) {
     if (!r.ok) throw 0;
     const m = await r.json();
     S.meta = { trends:m.trends || null, stream:m.stream || null, updated:m.updated || "" };
-    S.press = m.press || {};
+    if (m.press) S.press = m.press;
     store.set("meta", m);
+    try { const pr = await fetch("./data/press.json", { cache:"no-cache" }); if (pr.ok) { const pj = await pr.json(); S.press = pj.press || {}; store.set("press", pj); } } catch {}
     if (manual) toast("Données à jour.");
   } catch {
     if (manual) toast(navigator.onLine ? "Impossible de récupérer les données pour le moment." : "Hors ligne : les dernières données restent disponibles.");
@@ -2081,6 +2193,7 @@ document.addEventListener("click", ev => {
   else if (act === "export") exportData();
   else if (act === "importfile") $("#importfile").click();
   else if (act === "refreshmeta") loadMeta(true);
+  else if (act === "syncnow") syncNow(true);
   else if (act === "testgh") {
     t.disabled = true; t.textContent = "Test en cours…";
     ghFetch("/issues?state=all&per_page=1")
@@ -2102,30 +2215,35 @@ document.addEventListener("submit", ev => {
     ev.preventDefault();
     const k = String(new FormData(f).get("gh") || "").trim();
     if (!/^(github_pat_|ghp_)/.test(k)) { toast("Un jeton GitHub commence par « github_pat_ ». Vérifie le copier-coller."); return; }
-    setToken(k); toast("Jeton enregistré sur ce téléphone. Touche Tester pour vérifier."); render(); flushQueue();
+    setToken(k); toast("Jeton enregistré sur cet appareil. Touche Tester pour vérifier."); render(); flushQueue(); syncNow();
   } else if (f.dataset.form === "paste") {
     ev.preventDefault();
     importData(new FormData(f).get("blob"));
   }
 }, true);
-addEventListener("online", () => { renderNav(); loadMeta(); flushQueue(); });
+addEventListener("online", () => { renderNav(); loadMeta(); flushQueue(); syncNow(); });
 addEventListener("offline", renderNav);
 
 /* ───────── démarrage ───────── */
 async function boot() {
-  const [e, w, c, r, m, sh, rq] = await Promise.all(["entries","works","covers","reviews","meta","shared","requests"].map(k => store.get(k)));
+  const [e, w, c, r, m, sh, rq, dl, pr] = await Promise.all(["entries","works","covers","reviews","meta","shared","requests","del","press"].map(k => store.get(k)));
+  S.del = Object.assign({ e:{}, w:{}, c:{}, r:{} }, dl || {});
   S.shared = (sh && sh.works) || {}; S.requests = Array.isArray(rq) ? rq : [];
   S.entries = e || {}; S.works = w || {}; S.covers = c || {}; S.reviews.me = r || {};
   if (m) { S.meta = { trends:m.trends || null, stream:m.stream || null, updated:m.updated || "" }; S.press = m.press || {}; }
+  if (pr && pr.press) S.press = pr.press;
+  try { history.replaceState(navState(), ""); } catch {}
   render();
   loadMeta();
   flushQueue();
+  syncNow();
   if ("serviceWorker" in navigator) {
     try {
+      const hadController = !!navigator.serviceWorker.controller;
       const reg = await navigator.serviceWorker.register("./sw.js");
       reg.update && reg.update();
       let reloaded = false;
-      navigator.serviceWorker.addEventListener("controllerchange", () => { if (reloaded) return; reloaded = true; if (!typing()) location.reload(); });
+      navigator.serviceWorker.addEventListener("controllerchange", () => { if (!hadController || reloaded) return; reloaded = true; if (!typing()) location.reload(); });
     } catch {}
   }
   if (navigator.storage && navigator.storage.persist) { try { navigator.storage.persist(); } catch {} }
