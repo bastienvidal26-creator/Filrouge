@@ -899,9 +899,10 @@ const CATALOG = [
  crit:"Énorme succès mondial, salué pour ses ciels lumineux et son montage musical. Il a fait de Shinkai une figure majeure de l’animation.",
  prix:["Los Angeles Film Critics Association 2016 : meilleur film d’animation"],rel:[],pal:["#22356b","#fde9c9","#f3a25b"],pat:"sun"},
 
-{id:"edgerunners",t:"anime",ti:"Cyberpunk: Edgerunners",ro:"Saibāpanku Ejjirannāzu",jp:"サイバーパンク",y:2022,e:2022,st:"terminé",d:"",g:["Science-fiction","Cyberpunk","Action"],
- staff:[["Réalisation","Hiroyuki Imaishi"],["Scénario","Yoshiki Usa"],["Scénario","Masahiko Ōtsuka"],["Musique","Akira Yamaoka"],["Œuvre originale","CD Projekt Red"]],studio:"Studio Trigger",fmt:"ONA",eps:10,dur:"25 min",
- syn:"À Night City, David Martinez perd sa mère et se fait implanter un cyberware militaire. Il rejoint une bande de mercenaires et tombe amoureux de Lucy, une netrunneuse qui rêve de la Lune.",
+{id:"edgerunners",t:"anime",ti:"Cyberpunk: Edgerunners",ro:"Saibāpanku Ejjirannāzu",jp:"サイバーパンク",y:2022,e:2026,st:"terminé",d:"",g:["Science-fiction","Cyberpunk","Action"],
+ staff:[["Réalisation","Hiroyuki Imaishi"],["Scénario","Yoshiki Usa"],["Scénario","Masahiko Ōtsuka"],["Musique","Akira Yamaoka"],["Œuvre originale","CD Projekt Red"]],studio:"Studio Trigger",fmt:"ONA",eps:20,dur:"25 min",
+ ss:[{n:"Saison 1",y:2022,eps:10,studio:"Studio Trigger",note:"Réalisée par Hiroyuki Imaishi : l’histoire de David Martinez."},{n:"Cyberpunk: Edgerunners 2",y:2026,eps:10,studio:"Studio Trigger",note:"Suite réalisée par Kai Ikarashi, avec de nouvelles intrigues à Night City, mise en ligne d’un bloc sur Netflix le 20 octobre 2026."}],
+ syn:"À Night City, David Martinez perd sa mère et se fait implanter un cyberware militaire. Il rejoint une bande de mercenaires et tombe amoureux de Lucy, une netrunneuse qui rêve de la Lune. La deuxième saison (2026) raconte de nouvelles histoires dans la même ville.",
  crit:"Saluée pour son énergie visuelle et sa noirceur. La série a relancé l’intérêt pour le jeu Cyberpunk 2077 dont elle est tirée.",
  prix:["Crunchyroll Anime Awards 2023 : anime de l’année"],rel:[],pal:["#0e0e1a","#f3e600","#ff2a6d"],pat:"speed"},
 /* ───────────── Naruto : deux séries distinctes ───────────── */
@@ -2303,7 +2304,7 @@ function vSettings() {
   </section>
   <p class="note-ed">FilRouge · version ${APP_VERSION}</p>`;
 }
-const APP_VERSION = "1.3.3";
+const APP_VERSION = "1.3.4";
 function exportData() {
   const data = { app:"filrouge", version:1, exported:new Date().toISOString(), entries:S.entries, works:S.works, covers:S.covers, reviews:S.reviews.me || {} };
   const blob = new Blob([JSON.stringify(data)], { type:"application/json" });
